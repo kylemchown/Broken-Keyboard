@@ -1,6 +1,11 @@
 class Methods {
-  def test(strings: String*)={
-    strings.map(x=> println(findWord(x)))
+  def test( num: Int, strings: String*)={
+    for (i<-0 to strings.size){
+      if(i<num && i < strings.size){
+        println(findWord(strings(i)))
+      }
+    }
+    //strings.map(x=> println(findWord(x)))
   }
 
   def findWord(string: String)={
