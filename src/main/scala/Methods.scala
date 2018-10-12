@@ -1,0 +1,17 @@
+class Methods {
+  def test(strings: String*)={
+    strings.map(x=> println(findWord(x)))
+  }
+
+  def findWord(string: String)={
+    val pattern = "^[" + string.toLowerCase +"]*$"
+    val lines = scala.io.Source.fromFile("C:\\\\Users\\\\Admin\\\\Desktop\\\\files\\\\enable1.txt").getLines.toArray
+    val validWords = scala.collection.mutable.ArrayBuffer[String]()
+    for(i<-0 to lines.size - 1 ){
+      if (lines(i).matches(pattern)){
+        validWords += lines(i)
+      }
+    }
+    validWords.maxBy(x=>x.length)
+  }
+}
