@@ -1,4 +1,4 @@
-class Methods {
+object Methods {
   def test( num: Int, strings: String*)={
     for (i<-0 to strings.size){
       if(i<num && i < strings.size){
